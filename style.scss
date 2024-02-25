@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#Product_Container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+    gap: 25px;
+
+    @media(min-width:320px) and (max-width:552px){
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .Product {
+        width: 300px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.226);
+        cursor: pointer;
+        transition: .4s;
+
+        @media(min-width:320px) and (max-width:552px){
+            width: 160px;
+        }
+
+        &:hover {
+            transform: translateY(5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.427);
+        }
+
+        .Product_Img {
+            width: 100%;
+            height: 300px;
+
+            @media(min-width:320px) and (max-width:552px){
+                height: 180px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .Product_Info {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+
+            @media(min-width:320px) and (max-width:552px){
+                padding: 10px;
+            }
+
+            div {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                h3 {
+                    color: orange;
+                    @media(min-width:320px) and (max-width:552px){
+                        font-size: 14px;
+                    }
+                }
+
+                span {
+                    color: rgb(68, 68, 68);
+                    font-weight: 700;
+                    font-style: italic;
+                }
+
+                p {
+                    color: gray;
+                    letter-spacing: 5px;
+                }
+            }
+        }
+    }
+}
+
+
+#Watch_Info_Container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    display: none;
+    top: 0;
+    z-index: 10;
+    background-color: rgb(41, 41, 41);
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+    padding: 50px 40px;
+    animation: show .2s ease-in-out forwards;
+
+    @media(min-width:320px) and (max-width:552px) {
+        padding:100px 30px;
+        flex-direction: column;
+        gap: 15px;
+        height: auto;
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 30px;
+        color: orange;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.254);
+        position: absolute;
+        background-color: transparent;
+        border: 5px solid orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 5%;
+        right: 5%;
+        transition: .4s;
+        cursor: pointer;
+        z-index: 10;
+
+        @media(min-width:320px) and (max-width:552px) {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
+
+        &:hover {
+            background-color: red;
+            color: white;
+        }
+    }
+
+    .Product_Info_Img {
+        width: 430px;
+        height: 550px;
+        overflow: hidden;
+        transform: skew(-5deg);
+        border: 5px solid orange;
+        opacity: 0;
+        animation: showimg .8s ease-in-out forwards;
+        animation-delay: .150s;
+
+        @media(min-width:320px) and (max-width:552px){
+            width: 90%;
+            height: 320px;
+        }
+
+        @keyframes showimg {
+            from {
+                opacity: 0;
+                transform: skew(-5deg) translateX(-150px);
+            }
+
+            to {
+                opacity: 1;
+                transform: skew(-5deg) translateX(0);
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .Product_Info_Box {
+        width: 600px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+
+        @media(min-width:320px) and (max-width:552px){
+            width: 100%;
+        }
+
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            h3 {
+                font-size: 40px;
+                color: orange;
+                opacity: 0;
+                animation: showtext .5s ease-in-out forwards;
+                animation-delay: .250s;
+
+                @media(min-width:320px) and (max-width:552px){
+                    font-size: 20px;
+                }
+            }
+
+            span {
+                font-size: 25px;
+                font-style: italic;
+                font-weight: 700;
+                opacity: 0;
+                animation: showtext .5s ease-in-out forwards;
+                animation-delay: .450s;
+                color: white;
+
+                @media(min-width:320px) and (max-width:552px){
+                    font-size: 15px;
+                }
+            }
+
+            p {
+                font-size: large;
+                letter-spacing: 5px;
+                opacity: 0;
+                animation: showtext .5s ease-in-out forwards;
+                animation-delay: .650s;
+                color: gray;
+
+                @media(min-width:320px) and (max-width:552px){
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                }
+            }
+
+            @keyframes showtext {
+                from {
+                    opacity: 0;
+                    transform: translateY(15px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}
